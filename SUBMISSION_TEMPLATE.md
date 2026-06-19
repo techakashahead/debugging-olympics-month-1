@@ -10,30 +10,31 @@
 
 | Field | Your answer |
 | --- | --- |
-| Name |  |
-| Branch | `fix/<your-name>` |
+| Name |  Md Aaman
+| Branch | `fix/mdaaman` |
 | Month / Round | Month 1 |
-| Time started |  |
-| Time finished |  |
-| Total time (min) |  |
+| Time started |  5:15|
+| Time finished |  5:30 |
+| Total time (min) |  15 mins|
 
 ---
 
 ## 🐞 Bug #1
 
 **Symptom I observed (what was visibly wrong):**
->
+> it was react standard syntax debugging where we need to clone the prev object then need to modify that rather than updating it directly
 
 **Where the bug lived (file + line / function):**
->
+>app.jsx , line = 39 /toggleTask(id)
 
 **Root cause (why it was happening — in your own words):**
->
+>due to react behaviour 
 
 **The fix — before:**
 ```jsx
 // paste the broken code
 ```
+setTasks(prev=> prev.filter((t) => t.id !== id))
 
 **The fix — after:**
 ```jsx
