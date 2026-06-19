@@ -22,10 +22,10 @@
 ## 🐞 Bug #1
 
 **Symptom I observed (what was visibly wrong):**
->
+> we can not tick and untic the task
 
 **Where the bug lived (file + line / function):**
->
+> i found the bug in 
 
 **Root cause (why it was happening — in your own words):**
 >
