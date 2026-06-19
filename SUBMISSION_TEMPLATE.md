@@ -60,26 +60,32 @@ function toggleTask(id) {
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
->
+> The "tasks still to do" banner did not update when tasks were added, completed, or deleted.
 
 **Where the bug lived (file + line / function):**
->
+> App.jsx → useEffect() that updates the remaining count.
 
 **Root cause (why it was happening — in your own words):**
->
+> The effect had an empty dependency array , so it only ran once when the component loaded and did not respond to task changes.
 
 **The fix — before:**
 ```jsx
 // paste the broken code
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [])
 ```
 
 **The fix — after:**
 ```jsx
 // paste your corrected code
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [tasks])
 ```
 
 **Why this fix works:**
->
+> I added, completed, and deleted tasks and confirmed that the banner count updated correctly each time.
 
 ---
 
