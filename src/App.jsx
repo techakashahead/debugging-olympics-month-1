@@ -34,11 +34,10 @@ export default function App() {
 
   function toggleTask(id) {
     // BUG #1 (state): see ANSWER_KEY.md
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, done: !task.done } : task
-      )
-    );
+    const updateTasks = tasks.map((task) =>
+      task.id === id ? { ...task, done: !task.done } : task
+    )
+    setTasks(updateTasks);
   }
 
   function deleteTask(id) {

@@ -28,43 +28,61 @@ the tasks array was not updated when toggle because const task is local variable
 
 **The fix — before:**
 ```jsx
-// paste the broken code
+ useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, []) 
 ```
 
 **The fix — after:**
 ```jsx
-// paste your corrected code
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [tasks]) //
 ```
 
 **Why this fix works:**
 >
+because due to empty dependency useffect is trigering only once when tasks array is initialized so when tasks array is updated it is not trigering re rendering
 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
+
 >
 
 **Where the bug lived (file + line / function):**
 >
 
+
 **Root cause (why it was happening — in your own words):**
->
+>the tasks array was not updated when toggle because const task is local variable which does not affect the tasks array to update tasks array we have to create new tasks array and insert entries accordingly
 
 **The fix — before:**
 ```jsx
-// paste the broken code
+function toggleTask(id) {
+    // BUG #1 (state): see ANSWER_KEY.md
+    const task = tasks.find((t) => t.id === id)
+    task.done = !task.done
+    setTasks(tasks)
+  }
 ```
 
 **The fix — after:**
 ```jsx
-// paste your corrected code
+function toggleTask(id) {
+    // BUG #1 (state): see ANSWER_KEY.md
+    const updateTasks = tasks.map((task) =>
+      task.id === id ? { ...task, done: !task.done } : task
+    )
+    setTasks(updateTasks);
+  }
 ```
 
 **Why this fix works:**
 >
-
+here we are updating correctly complety array 
 ---
 
 ## 🧰 What I used to find & fix the bugs
