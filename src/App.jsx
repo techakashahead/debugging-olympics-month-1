@@ -35,9 +35,7 @@ export default function App() {
   function toggleTask(id) {
     // BUG #1 (state): see ANSWER_KEY.md
     const task = tasks.find((t) => t.id === id)
-    setTasks(
-      tasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
-    )
+    setTasks(tasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t)))
   }
 
   function deleteTask(id) {
