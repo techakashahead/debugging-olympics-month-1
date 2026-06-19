@@ -66,13 +66,13 @@ function toggleTask(id) {
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
-> The issue I saw in the codebase was the usEffect getting used without any kind of dependencies which would surely cause running on every render. I saw the remaining tasks components getting rendered on every run. 
+> The issue I saw in the codebase was the usEffect getting used without any kind of dependencies which would surely cause running on every render. I saw the remaining tasks components getting rendered only once. 
 
 **Where the bug lived (file + line / function):**
 >The bug was in App.jsx file under the line 22 in the useeffect hook
 
 **Root cause (why it was happening — in your own words):**
->The use effect was called directly without any dependencies hence it was causing to run on every render. Fixed the issue by adding tasks as a dependencies
+>The use effect was called directly without any dependencies hence it was causing to run only one and not on every render. Fixed the issue by adding tasks as a dependencies
 
 **The fix — before:**
 ```jsx
@@ -92,7 +92,7 @@ useEffect(() => {
 ```
 
 **Why this fix works:**
-> UseEffect requires a dependency against which it needs to run the component. The absence of dependency will lead to running of the component again and again with every render. This can be fixed if we add a proper dependency in the []. This dependency behaves like a toggle on when the components needs to get rendered on change.
+> UseEffect requires a dependency against which it needs to run the component. The absence of dependency will lead to running of the component only once and not with every render. This can be fixed if we add a proper dependency in the []. This dependency behaves like a toggle on when the components needs to get rendered on change.
 
 ---
 
