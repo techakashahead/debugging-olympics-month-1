@@ -60,7 +60,7 @@
 > i found the bug in line 23 in App.jsx ->  }, [])
 
 **Root cause (why it was happening — in your own words):**
-> it has no idea what to do when called
+> it was not updating the remaining count and completed count of tasks because it was not called when the tasks array was updated
 
 **The fix — before:**
 ```jsx
@@ -73,7 +73,7 @@
 ```
 
 **Why this fix works:**
-> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating
+> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating 
 
 ---
 
