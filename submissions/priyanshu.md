@@ -47,7 +47,7 @@
 ```
 
 **Why this fix works:**
->
+> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating
 
 ---
 
@@ -73,7 +73,7 @@
 ```
 
 **Why this fix works:**
->
+> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating
 
 ---
 
