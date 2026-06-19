@@ -32,6 +32,7 @@
 
 **The fix — before:**
 ```jsx
+
 // paste the broken code
 ```
 
