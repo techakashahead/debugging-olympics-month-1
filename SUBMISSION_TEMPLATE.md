@@ -10,12 +10,12 @@
 
 | Field | Your answer |
 | --- | --- |
-| Name |  |
-| Branch | `fix/<your-name>` |
+| Name |Kashish Chaudhary  |
+| Branch | `fix/<kashishbranch>` |
 | Month / Round | Month 1 |
-| Time started |  |
-| Time finished |  |
-| Total time (min) |  |
+| Time started |  5:15 pm|
+| Time finished |  | 5:45 pm
+| Total time (min) | 30 min |
 
 ---
 
@@ -42,14 +42,14 @@
 
 **Why this fix works:**
 >
-
+checkboxs were not active 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
 >
-
+we were not able to add tasks
 **Where the bug lived (file + line / function):**
 >
 
