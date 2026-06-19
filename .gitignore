@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vscode/*
+
+# Instructor-only — must NOT be distributed to trainees (contain the answers)
+ANSWER_KEY.md
+FACILITATOR_BRIEFING.md
+
+# Tooling noise
+.claude-flow/
