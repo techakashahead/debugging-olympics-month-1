@@ -10,8 +10,8 @@
 
 | Field | Your answer |
 | --- | --- |
-| Name |  |
-| Branch | `fix/<your-name>` |
+| Name | Medha |
+| Branch | `fix-medha` |
 | Month / Round | Month 1 |
 | Time started |  |
 | Time finished |  |
@@ -21,53 +21,68 @@
 
 ## 🐞 Bug #1
 
-**Symptom I observed (what was visibly wrong):**
->
+**Symptom I observed (what was visibly wrong):** 
+> clonning was not done in usestate
 
 **Where the bug lived (file + line / function):**
->
+> app.jsx, line 39
 
 **Root cause (why it was happening — in your own words):**
->
+>data was not updating
 
 **The fix — before:**
 ```jsx
-// paste the broken code
+ function toggleTask(id) {
+    // BUG #1 (state): see ANSWER_KEY.md
+    const task = tasks.find((t) => t.id === id)
+    task.done = !task.done
+    setTasks(tasks)
+  }
 ```
 
 **The fix — after:**
 ```jsx
-// paste your corrected code
+  function toggleTask(id) {
+    // BUG #1 (state)
+    const task = tasks.find((t) => t.id === id)
+    task.done = !task.done
+    setTasks(prev=> prev.map(t=>t.id === id ? {...t,done:task.done}:t ))
+  }
+
 ```
 
 **Why this fix works:**
->
+>made a copy then updated the state
 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
->
+>there was no dependencies in useeffect function
 
 **Where the bug lived (file + line / function):**
->
+>app.jsx, line 21
 
 **Root cause (why it was happening — in your own words):**
->
+>re rendering was not occuring
 
 **The fix — before:**
 ```jsx
-// paste the broken code
+   useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [])
 ```
 
 **The fix — after:**
 ```jsx
-// paste your corrected code
+ useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [tasks]) // <-- BUG #2 (lifecycle)
 ```
 
 **Why this fix works:**
->
+>now useeffect has a dependency
 
 ---
 
