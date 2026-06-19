@@ -22,52 +22,71 @@
 ## 🐞 Bug #1
 
 **Symptom I observed (what was visibly wrong):**
->
+>When I clicked on a task checkbox, the task status was not updating correctly in the UI. React was not reliably re-rendering after toggling a task.
 
 **Where the bug lived (file + line / function):**
->
+> App.jsx , toggleTask function
 
 **Root cause (why it was happening — in your own words):**
 >
 
 **The fix — before:**
 ```jsx
-// paste the broken code
+function toggleTask(id) {
+    // BUG #1 
+    const task = tasks.find((t) => t.id === id)
+    task.done = !task.done
+    setTasks(prev=> prev.map(t=>t.id === id ? {...t,done:task.done}:t ))
+  }
 ```
 
 **The fix — after:**
 ```jsx
 // paste your corrected code
+
+function toggleTask(id) {
+    // BUG #1 (state): see ANSWER_KEY.md
+    const task = tasks.find((t) => t.id === id)
+    task.done = !task.done
+    setTasks(prev => prev.map(t=>t.id === id ? {...t,done:task.done} : t ))
+  }
+
+  function deleteTask(id) {
+    setTasks(tasks.filter((t) => t.id !== id))
+  }
+
 ```
 
 **Why this fix works:**
->
+>Instead of updating the existing state directly, the fix creates a new array and a new task object. React receives a new state reference and correctly triggers a re-render.
 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
->
+> The "remaining tasks" count was not updating when tasks were completed, unchecked, added, or removed.
 
 **Where the bug lived (file + line / function):**
->
+>App.jsx, useEffect() that updates the remaining state
 
 **Root cause (why it was happening — in your own words):**
->
+> The effect had an empty dependency array ([]), so it only ran once when the component mounted. It never ran again when the tasks state changed.
 
 **The fix — before:**
 ```jsx
-// paste the broken code
-```
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, []) // <-- BUG #2 (lifecycle): 
 
-**The fix — after:**
-```jsx
-// paste your corrected code
-```
+//**The fix — after:**
 
-**Why this fix works:**
->
+useEffect(() => {
+  setRemaining(tasks.filter((t) => !t.done).length)
+}, [tasks])
+
+//**Why this fix works:**
+> Adding tasks to the dependency array makes the effect run every time the task list changes. This keeps the remaining task count synchronized with the actual task state.
 
 ---
 
