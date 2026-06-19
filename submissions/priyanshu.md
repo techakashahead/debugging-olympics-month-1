@@ -47,14 +47,14 @@
 ```
 
 **Why this fix works:**
-> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating
+> it works same as same as before i can add, delete and tick and untick the tasks and count is also updating and it also updating the completed and remaining count of tasks.
 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
-> we cannot add new task what i see
+> it was not updating the remaining count and completed count of tasks.
 
 **Where the bug lived (file + line / function):**
 > i found the bug in line 23 in App.jsx ->  }, [])
