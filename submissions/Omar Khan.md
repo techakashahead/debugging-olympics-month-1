@@ -17,7 +17,7 @@
 | Time finished |  |
 | Total time (min) |  |
 
----
+--- 
 
 ## 🐞 Bug #1
 
