@@ -84,14 +84,14 @@ useEffect(() => {
 
 Tick all that apply and add a one-line note on *how* each helped.
 
-- [ ] Browser DevTools console / Elements
+- [  * ] Browser DevTools console / Elements - to test the repo works fine
 - [ ] React DevTools (Components / Profiler) — _how:_
-- [ ] `console.log` / breakpoints — _how:_
-- [ ] React official docs — _which page:_
+- [ * ] `console.log` / breakpoints — _how:_  to check the value of task even if updated or not
+- [ ] React official docs — _which page:_ 
 - [ ] ESLint / `eslint-plugin-react-hooks` warning — _which rule:_
 - [ ] AI assistant (e.g. ChatGPT / Claude) — _what I asked & what I verified myself:_
 - [ ] Teammate / pair — _what we discussed:_
-- [ ] Other:
+- [ ] Other: React notes
 
 ---
 
@@ -100,11 +100,16 @@ Tick all that apply and add a one-line note on *how* each helped.
 Describe the exact steps you took to confirm each bug is gone (e.g. "ticked a
 task → row struck through and count updated"; "added a task → tab title changed").
 >
-
+first i go through the readme file and then i analyze the work flow and the real bug i have to fix, then i go through the button i needed to fix the bug ,then i realize there was no cloning of object on updating the value of useState fucntion setTask , than i fix that
 ---
+then i go to fix bug 2 and i realize there no depency in useEffect function and but we need to put dependency as per bussniess requirment and i udpate the dependency with the value using array that whenever my that value changes it will re render 
 
 ## 💭 Reflection (optional, scored bonus)
 
 - What category of React mistake was each bug? (state / lifecycle / rendering / …)
+there was bug in hooks of react , specially in useState and useEffect ,where in useState we use the best practice of update the attribute of useState is by cloning the previous object and make changes as per requirment and whenever the the value will changes it will refelect in ui as well
+
+in useEffect there was missing dependecny where we need to add dependency as per our requirement,so that whenever the attribute changes the ui will re render
+
 - How would you prevent this class of bug in real code?
->
+>first go to deep analysis of bussniess requirement and go with the flow of work , and check where can bug cause , and check where the bug occurs and fix using with detail analysis of documnetaion and knowledge of that particular topic.and debug with sdlc.
