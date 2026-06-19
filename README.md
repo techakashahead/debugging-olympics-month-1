@@ -65,20 +65,6 @@ does that effect re-run? Check its dependency array — what is it watching?
 
 </details>
 
----
-
-## 📋 Scoring (instructor tracks this)
-
-| Item | Points |
-| --- | --- |
-| Bug #1 fixed correctly | 40 |
-| Bug #2 fixed correctly | 40 |
-| Clean fix (idiomatic, no new bugs) | 10 |
-| Finished under 30 min | 10 |
-| **Total** | **100** |
-
-Your instructor records each participant's time and score for month-over-month
-progression.
 
 ---
 

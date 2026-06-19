@@ -6,6 +6,7 @@ import TaskList from '../components/TaskList.jsx'
 export default function HomePage({ tasks, remaining, onAdd, onToggle, onDelete }) {
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState('all') // all | active | done
+  const[count, setCount] = useState(0)
 
   // Search + filter are derived from props on every render (no extra state).
   const visibleTasks = tasks
