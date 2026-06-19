@@ -96,7 +96,7 @@ Tick all that apply and add a one-line note on *how* each helped.
 
 Describe the exact steps you took to confirm each bug is gone (e.g. "ticked a
 task → row struck through and count updated"; "added a task → tab title changed").
-> first i run the assignment then i saw it isn't working as expected then i started debugging and fix it step by step and i see the redme file where it mention what the bug it is.
+> first i run the assignment then i saw it isn't working as expected then i started debugging and fix it step by step and i see the readme file where it mention what the bug it is. then i check it and i see the code is working as expected. then i run the tests and i see the tests are also passing. 
 
 ---
 
@@ -104,4 +104,4 @@ task → row struck through and count updated"; "added a task → tab title chan
 
 - What category of React mistake was each bug? (state / lifecycle / rendering / …)
 - How would you prevent this class of bug in real code?
-> for this i would like to say i am not sure about this what it is asking, but i can say we should always use the proper state management and proper lifecycle management and proper rendering.
+> for this i would like to say i am not sure about this what it is asking, but i can say we should always use the proper state management and proper lifecycle management and proper rendering. so that we can avoid these type of bugs. 
