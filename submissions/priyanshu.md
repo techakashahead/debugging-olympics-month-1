@@ -22,13 +22,13 @@
 ## 🐞 Bug #1
 
 **Symptom I observed (what was visibly wrong):**
-> we can not tick and untic the task
+> we can not tick and untick teh task and doest know the remaining and completed task's count
 
 **Where the bug lived (file + line / function):**
 > i found the bug in line 39 in App.jsx  -> const task = tasks.find((t) => t.id === id)
 
 **Root cause (why it was happening — in your own words):**
-> 
+> it was happening because it doesn't use the id to find the task
 
 **The fix — before:**
 ```jsx
@@ -54,13 +54,13 @@
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
-> we cantot add new task what i see
+> we cannot add new task
 
 **Where the bug lived (file + line / function):**
 > line 23   }, [tasks])
 
 **Root cause (why it was happening — in your own words):**
-> it has no idea what what how to add where. i add task in the place
+> it has no idea what to do when
 
 **The fix — before:**
 ```jsx
