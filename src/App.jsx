@@ -20,8 +20,8 @@ export default function App() {
   )
   useEffect(() => {
     setRemaining(tasks.filter((t) => !t.done).length)
-  }, []) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
-
+  }, [tasks]) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
+  
   function addTask(text, priority) {
     const newTask = {
       id: Date.now(),
@@ -34,9 +34,11 @@ export default function App() {
 
   function toggleTask(id) {
     // BUG #1 (state): see ANSWER_KEY.md
-    const task = tasks.find((t) => t.id === id)
-    task.done = !task.done
-    setTasks(tasks)
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      )
+    )
   }
 
   function deleteTask(id) {
