@@ -59,7 +59,7 @@
 
 **Why this fix works:**
 >
-The setTasks was resetting the same tasks again and again without modifying it.
+
 ---
 
 ## 🐞 Bug #2
@@ -75,21 +75,17 @@ The setTasks was resetting the same tasks again and again without modifying it.
 
 **The fix — before:**
 ```jsx
-  useEffect(() => {
-    setRemaining(tasks.filter((t) => !t.done).length)
-  }, [])
+// paste the broken code
 ```
 
 **The fix — after:**
 ```jsx
-  useEffect(() => {
-    setRemaining(tasks.filter((t) => !t.done).length)
-  }, [tasks])
+// paste your corrected code
 ```
 
 **Why this fix works:**
 >
-useEffect needs to listen to a change which is stored in the use effect which when not applied doesnt run useEffect. It is used to listen to change eg - async await.
+
 ---
 
 ## 🧰 What I used to find & fix the bugs
