@@ -40,32 +40,40 @@ setTasks(prev=> prev.filter((t) => t.id !== id))
 ```jsx
 // paste your corrected code
 ```
+setTasks(prev=> prev.map(t=>t.id === id ? {...t,done:task.done}:t ))
 
 **Why this fix works:**
->
+>. we clone the object and set the task with updateing the task value with done or not
 
 ---
 
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
->
+> there was issue in dependency of useEffect
 
 **Where the bug lived (file + line / function):**
->
+>app.jsx, 21 / useEffect
 
 **Root cause (why it was happening — in your own words):**
->
+>no dependency given
 
 **The fix — before:**
 ```jsx
 // paste the broken code
 ```
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
 
 **The fix — after:**
 ```jsx
 // paste your corrected code
 ```
+useEffect(() => {
+    setRemaining(tasks.filter((t) => !t.done).length)
+  }, [tasks]) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
+
 
 **Why this fix works:**
 >
