@@ -39,3 +39,4 @@ export default function TaskForm({ onAdd }) {
     </form>
   )
 }
+export default TaskForm;
