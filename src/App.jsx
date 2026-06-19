@@ -36,7 +36,7 @@ export default function App() {
     // BUG #1 (state): see ANSWER_KEY.md
     const task = tasks.find((t) => t.id === id)
     task.done = !task.done
-    setTasks(tasks)
+    setTasks([...tasks])
   }
 
   function deleteTask(id) {
