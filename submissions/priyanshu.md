@@ -25,10 +25,10 @@
 > we can not tick and untic the task
 
 **Where the bug lived (file + line / function):**
-> i found the bug in 
+> i found the bug in line 39 in App.jsx  -> const task = tasks.find((t) => t.id === id)
 
 **Root cause (why it was happening — in your own words):**
->
+> 
 
 **The fix — before:**
 ```jsx
@@ -39,7 +39,7 @@
 
 **The fix — after:**
 ```jsx
-setTasks(
+    setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, done: !task.done } : task
       )
@@ -54,22 +54,22 @@ setTasks(
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
->
+> we cantot add new task what i see
 
 **Where the bug lived (file + line / function):**
->
+> line 23   }, [tasks])
 
 **Root cause (why it was happening — in your own words):**
->
+> it has no idea what what how to add where. i add task in the place
 
 **The fix — before:**
 ```jsx
-  }, []) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
+  }, []) 
 ```
 
 **The fix — after:**
 ```jsx
-  }, [tasks]) // <-- BUG #2 (lifecycle): see ANSWER_KEY.md
+  }, [tasks]) /
 ```
 
 **Why this fix works:**
