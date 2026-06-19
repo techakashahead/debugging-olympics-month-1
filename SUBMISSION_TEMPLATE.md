@@ -8,10 +8,10 @@
 
 ## 👤 Participant
 
-| Field | Your answer |
+| Field |  |
 | --- | --- |
-| Name |  |
-| Branch | `fix/<your-name>` |
+| Name | Swarnima |
+| Branch | `fix/swarnima` |
 | Month / Round | Month 1 |
 | Time started |  |
 | Time finished |  |
