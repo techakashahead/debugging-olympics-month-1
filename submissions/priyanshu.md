@@ -25,10 +25,10 @@
 > we can not tick and untick teh task and doest know the remaining and completed task's count
 
 **Where the bug lived (file + line / function):**
-> i found the bug in line 39 in App.jsx  -> const task = tasks.find((t) => t.id === id)
+> i found the bug in line 39 in App.jsx  -> const task = tasks.find((t) => t.id === id) 
 
 **Root cause (why it was happening — in your own words):**
-> it was happening because it doesn't use the id to find the task
+> it was happening because it doesn't use the id to find the task and directly change it value
 
 **The fix — before:**
 ```jsx
@@ -54,13 +54,13 @@
 ## 🐞 Bug #2
 
 **Symptom I observed (what was visibly wrong):**
-> we cannot add new task
+> we cannot add new task what i see
 
 **Where the bug lived (file + line / function):**
-> line 23   }, [tasks])
+> i found the bug in line 23 in App.jsx ->  }, [])
 
 **Root cause (why it was happening — in your own words):**
-> it has no idea what to do when
+> it has no idea what to do when called
 
 **The fix — before:**
 ```jsx
